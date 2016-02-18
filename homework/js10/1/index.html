@@ -17,8 +17,10 @@
                 var tf2 = document.forms.f1.elements.tf2;  
                 
                 btn.onclick = function(){
-                    tf2.value=tf1.value;
-                    tf1.value="";
+                    if (tf1.value){
+                        tf2.value=tf1.value;
+                        tf1.value="";    
+                    };
                 };
             }
         </script>
