@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>Lesson 10</title>
+	</head>
+	<body>
+        <form name='f1'>
+	        <input type='text' name='tf1'/>
+	        <input type='button' name='btn' value="push"/>
+	        <input type='text' name='tf2'/>
+        </form>
+		<script>
+            window.onload = function(){
+                var tf1 = document.forms.f1.elements.tf1;
+                var btn = document.forms.f1.elements.btn;
+                var tf2 = document.forms.f1.elements.tf2;  
+                
+                btn.onclick = function(){
+                    tf2.value=tf1.value;
+                    tf1.value="";
+                };
+            }
+        </script>
+	</body>
+</html>
