@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf8">
+		<title>Lesson 11 example 2</title>
+	</head>
+	<body>
+        <form name='f1'>
+            <input type='checkbox'/>
+	        <input type='checkbox'/>
+	        <input type='checkbox'/>
+	        <input type='checkbox'/>
+	        <input type='checkbox'/>
+	        <input type='checkbox'/>
+	        <input type='checkbox'/>
+	        <br>
+	        <br>
+	        <input type="button" name="btn1" value="Check"/>
+	        <br>
+	        <br>
+	        <input type="button" name="btn2" value="unCheck"/>
+        </form>
+        <script>
+            var df = document.forms.f1;
+            var btn1 = document.forms.f1.elements.btn1;
+            var btn2 = document.forms.f1.elements.btn2;
+                
+            btn1.onclick = function(){
+                for (var i=0;i<df.elements.length;i++){
+                    var el = df.elements[i];
+                    if (el.type=='checkbox'){
+                        el.checked = true;    
+                    };
+                };
+            };
+                
+            btn2.onclick = function(){
+                for (var i=0;i<df.elements.length;i++){
+                     if (df.elements[i].type=='checkbox'){
+                        df.elements[i].checked = false;    
+                    };
+                };
+            };
+        </script>
+	</body>
+</html>

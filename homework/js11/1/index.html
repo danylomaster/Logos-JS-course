@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf8">
+		<title>Lesson 11 example 1</title>
+	</head>
+	<style>
+        .b1{
+            font-weight: normal;
+        }
+        .b2{
+            font-weight: bold;
+        }
+    </style>
+	<body>
+        <form name='f1'>
+            <h1 id="someText" class="b1">Some text</h1>
+	        <label><input type='checkbox' name='cb'/>bold text</label>
+        </form>
+		<script>
+            var h = document.getElementById("someText");
+            var cb = document.forms.f1.elements.cb;
+
+            cb.onclick = function(){
+                (this.checked)?h.className = "b2":h.className ="b1";
+            };   
+        </script>
+	</body>
+</html>

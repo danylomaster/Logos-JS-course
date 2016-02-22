@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf8">
+		<title>Lesson 11</title>
+	</head>
+	<style>
+        .b1{
+            font-weight: normal;
+        }
+        .b2{
+            font-weight: bold;
+        }
+    </style>
+	<body>
+<form name='f1'>
+    
+<!-- 1)
+	<h1 id="someText" class="b1">Some text</h1>
+	<label><input type='checkbox' name='cb'/>bold text</label>
+-->
+<!-- 2)
+	<input type='checkbox'/>
+	<input type='checkbox'/>
+	<input type='checkbox'/>
+	<input type='checkbox'/>
+	<input type='checkbox'/>
+	<input type='checkbox'/>
+	<input type='checkbox'/>
+	<br>
+	<br>
+	<input type="button" name="btn1" value="Check"/>
+	<br>
+	<br>
+	<input type="button" name="btn2" value="unCheck"/>
+	-->
+	<!-- 3)
+	<label><input  type="radio" name="rb1" value="Text1"/>Text1</label>
+	<label><input  type="radio" name="rb2" value="Text1"/>Text2</label>
+	<label><input  type="radio" name="rb3" value="Text1"/>Text3</label>
+	-->
+<!--	3.1)
+	<label><input  type="radio" name="rb" value="Text1"/>Text1</label>
+	<label><input  type="radio" name="rb" value="Text2"/>Text2</label>
+	<label><input  type="radio" name="rb" value="Text3"/>Text3</label>
+-->	
+    <select name="list">
+        <option value="Text1">Text1</option>
+        <option value="Text2">Text2</option>
+        <option value="Text3">Text3</option>
+        <option value="Text4">Text4</option>
+        <option value="Text5">Text5</option>
+   </select>
+   <input type="button" name="btn" value="View"/>
+</form>
+		<script>
+    //        window.onload = function(){
+                /* //1)
+var h = document.getElementById("someText");
+var cb = document.forms.f1.elements.cb;
+
+cb.onclick = function(){
+    (this.checked)?h.className = "b2":h.className ="b1";
+ };   
+//    this.checked = false;
+*/ 
+                
+/*  2)              
+                var df = document.forms.f1;
+                var btn1 = document.forms.f1.elements.btn1;
+                var btn2 = document.forms.f1.elements.btn2;
+                
+                btn1.onclick = function(){
+                for (var i=0;df.elements.length-2;i++){
+                    alert(document.forms.f1.elements[i]);
+                    var el = df.elements[i];
+                    //alert(el);
+                    if (el.type=='checkbox'){
+                        df.elements[i].checked = true;    
+                    }
+                }
+                };
+                
+                
+                btn2.onclick = function(){
+                for (var i=0;df.elements.length;i++){
+                     if (df.elements[i].type=='checkbox'){
+                        df.elements[i].checked = false;    
+                    }
+                }
+                };
+            };
+*/        
+                /* 3)
+                var rb1 = document.forms.f1.elements.rb1;
+                var rb2 = document.forms.f1.elements.rb2;
+                var rb3 = document.forms.f1.elements.rb3;
+            
+                var cl = function(){
+                        alert(this.value);
+                };
+                
+                rb1.onclick = cl;
+                rb2.onclick = cl;
+                rb3.onclick = cl;
+                */
+                /*
+                var elements = document.forms.f1.elements;
+                for(var i=0;elements.length;i++){
+                    if(elements[i].type=="radio"){
+                        elements[i].onclick = function(){
+                            alert(this.value);
+                        }
+                    }
+                }
+                */
+                
+                var btn = document.forms.f1.elements.btn;
+                var list = document.forms.f1.elements.list;
+                list.onchange = function(){
+                    var el = this.options[this.selectedIndex];
+                    el.innerHTML+="+"
+                };
+                btn.onclick = function(){
+                    alert(list.options[list.selectedIndex].innerHTML);
+                };
+                
+                
+//            };
+        </script>
+	</body>
+</html>

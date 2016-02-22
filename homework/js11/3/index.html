@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf8">
+		<title>Lesson 11 example 3</title>
+	</head>
+	<body>
+        <form name='f1'>
+            <label><input  type="radio" name="rb" value="Text1"/>Text1</label>
+            <br>
+	        <label><input  type="radio" name="rb" value="Text2"/>Text2</label>
+	        <br>
+	        <label><input  type="radio" name="rb" value="Text3"/>Text3</label>
+        </form>
+		<script>
+            var elements = document.forms.f1.elements;
+            for(var i=0;elements.length;i++){
+                if(elements[i].type=="radio"){
+                    elements[i].onclick = function(){
+                        alert(this.value);
+                    };
+                };
+            };
+        </script>
+	</body>
+</html>

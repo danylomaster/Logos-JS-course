@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf8">
+		<title>Lesson 11 example 4</title>
+	</head>
+	<body>
+        <form name='f1'>
+            <select name="list">
+                <option value="Text1">Text1</option>
+                <option value="Text2">Text2</option>
+                <option value="Text3">Text3</option>
+                <option value="Text4">Text4</option>
+                <option value="Text5">Text5</option>
+           </select>
+           <input type="button" name="btn" value="View"/>
+        </form>
+		<script>
+            var btn = document.forms.f1.elements.btn;
+            var list = document.forms.f1.elements.list;
+            list.onchange = function(){
+                var el = this.options[this.selectedIndex];
+                el.innerHTML+="+"
+            };
+            btn.onclick = function(){
+                alert(list.options[list.selectedIndex].innerHTML);
+            };
+        </script>
+	</body>
+</html>
