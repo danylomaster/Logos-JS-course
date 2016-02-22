@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf8">
+		<title>Lesson 11 example 5</title>
+	</head>
+	<body>
+        <form name='f1'>
+            <input type='checkbox'/>
+	        <input type='checkbox'/>
+	        <input type='checkbox'/>
+	        <input type='checkbox'/>
+	        <input type='checkbox'/>
+	        <input type='checkbox'/>
+	        <input type='checkbox'/>
+	        <br>
+	        <br>
+	        <input type="button" name="btn" value="Checked"/>
+        </form>
+		<script>
+            var df = document.forms.f1;
+            var btn = document.forms.f1.elements.btn;
+            function toggleCb (toggleValue){
+                for (var i=0;i<df.elements.length;i++){
+                    var el = df.elements[i];
+                    if (el.type=='checkbox'){
+                        df.elements[i].checked = toggleValue;    
+                    };
+                };
+            };
+            btn.onclick = function(){
+                if(btn.value == "Checked"){
+                    btn.value = "Unchecked";
+                    toggleCb(false);
+                } else {
+                    btn.value = "Checked";
+                    toggleCb(true);
+                };
+            };
+        </script>
+	</body>
+</html>
